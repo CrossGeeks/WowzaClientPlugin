@@ -1,2 +1,2 @@
 # WowzaClientPlugin
-Plugin for wowza streaming service
+Plugin for Wowza streaming service
