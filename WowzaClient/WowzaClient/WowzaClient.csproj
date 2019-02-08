@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras/1.6.61">
+﻿<Project Sdk="MSBuild.Sdk.Extras/1.6.65">
 
   <PropertyGroup>
     <!--Work around so the conditions work below-->
@@ -74,13 +74,16 @@
   </ItemGroup>-->
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
+    <PackageReference Include="Xamarin.Android.Wowza" Version="1.0.0"/>
     <Compile Include="**\*.android.cs" />
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
+    <PackageReference Include="Xamarin.iOS.Wowza" Version="1.0.0"/>
     <Compile Include="**\*.apple.cs" />
   </ItemGroup>
 
+  
 
   <!--Additional item groups-->
   <!--
@@ -113,5 +116,5 @@
   </ItemGroup>
   -->
 
-  <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
+  <!--<Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />-->
 </Project>
