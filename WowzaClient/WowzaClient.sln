@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowzaClient", "WowzaClient\WowzaClient.csproj", "{845B4515-7A33-402E-8B4C-ADD2F92A51AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{845B4515-7A33-402E-8B4C-ADD2F92A51AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{845B4515-7A33-402E-8B4C-ADD2F92A51AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{845B4515-7A33-402E-8B4C-ADD2F92A51AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{845B4515-7A33-402E-8B4C-ADD2F92A51AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDAAAFD5-DCF0-469E-805B-10C43C263B40}
+	EndGlobalSection
+EndGlobal
