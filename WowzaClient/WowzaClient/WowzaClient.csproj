@@ -1,9 +1,9 @@
-<Project Sdk="MSBuild.Sdk.Extras/1.6.61">
+﻿<Project Sdk="MSBuild.Sdk.Extras/1.6.65">
 
   <PropertyGroup>
     <!--Work around so the conditions work below-->
     <TargetFrameworks></TargetFrameworks>
-    <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">netstandard1.0;netstandard2.0;Xamarin.iOS10;MonoAndroid81;uap10.0.16299</TargetFrameworks>
+    <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">netstandard1.0;netstandard2.0;Xamarin.iOS10;MonoAndroid81</TargetFrameworks>
     <TargetFrameworks Condition=" '$(OS)' != 'Windows_NT' ">netstandard1.0;netstandard2.0;Xamarin.iOS10;MonoAndroid81</TargetFrameworks>
     <!--Feel free to add as many targets as you need below
     netstandard1.0;netstandard2.0;MonoAndroid81;Xamarin.iOS10;uap10.0.16299;Xamarin.TVOS10;Xamarin.WatchOS10;Xamarin.Mac20;Tizen40
@@ -16,8 +16,8 @@
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
-    <Version>1.0.0.0</Version>
-    <PackageVersion>1.0.0.0</PackageVersion>
+    <Version>0.1.0-beta</Version>
+    <PackageVersion>0.1.0-beta</PackageVersion>
     <PackOnBuild>true</PackOnBuild>
     <NeutralLanguage>en</NeutralLanguage>
     <LangVersion>default</LangVersion>
@@ -28,22 +28,20 @@
 
     <LangVersion>latest</LangVersion>
     
-    <!--TODO: Fill these in-->
-    <PackageLicenseUrl>LINK TO LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>LINK TO PROJECT</PackageProjectUrl>
-    <RepositoryUrl>LINK TO PROJECT</RepositoryUrl>
-    <PackageReleaseNotes>RELEASE NOTES</PackageReleaseNotes>
-    <PackageIconUrl>ICON URL</PackageIconUrl>
-    <PackageTags>xamarin, windows, ios, android, xamarin.forms, plugin, WowzaClient</PackageTags>
+    <PackageLicenseUrl>https://www.github.com/CrossGeeks/WowzaClientPlugin/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://www.github.com/CrossGeeks/WowzaClientPlugin</PackageProjectUrl>
+    <RepositoryUrl>https://www.github.com/CrossGeeks/WowzaClientPlugin</RepositoryUrl>
+    <PackageReleaseNotes>Playback of broadcasts handling added.</PackageReleaseNotes>
+    <PackageIconUrl>https://github.com/CrossGeeks/WowzaClientPlugin/blob/master/WowzaClient/art/icon.png?raw=true</PackageIconUrl>
+    <PackageTags>xamarin, ios, android, xamarin.forms, plugin, broadcast, playback, WowzaClient</PackageTags>
     
-    <Title>WowzaClient Plugin for Xamarin and Windows</Title>
-    <Summary>Summary of nuget</Summary>
-    <Description>Plugin Description</Description>
+    <Title>Wowza Client Plugin for Xamarin</Title>
+    <Summary>Playback live broadcasts using the Wowza Media Services across Xamarin.iOS, Xamarin.Android.</Summary>
+    <Description>Playback live broadcast using the Wowza Media Services across Xamarin.iOS, Xamarin.Android.</Description>
     
-    
-    <Owners>YOU</Owners>
-    <Authors>YOU</Authors>
-    <Copyright>Copyright 2018</Copyright>
+    <Owners>crossgeeks</Owners>
+    <Authors>pujolsluis, rdelrosario</Authors>
+    <Copyright>Copyright 2019</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)'=='Debug' ">
@@ -58,29 +56,34 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MSBuild.Sdk.Extras" Version="1.6.65" PrivateAssets="All" />
     <Compile Include="**\*.shared.cs" />
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
   </ItemGroup>
 
-  <ItemGroup Condition=" $(TargetFramework.StartsWith('uap10.0')) ">
+  <!--<ItemGroup Condition=" $(TargetFramework.StartsWith('uap10.0')) ">
     <Compile Include="**\*.uwp.cs" />
-    <!--
+    
     If you need to add sdk references:
      <SDKReference Include="WindowsMobile, Version=10.0.16299.0">
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
-    -->
-  </ItemGroup>
+    
+  </ItemGroup>-->
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
+    <PackageReference Include="Xamarin.Android.Wowza" Version="1.0.0"/>
     <Compile Include="**\*.android.cs" />
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
+    <PackageReference Include="Xamarin.iOS.Wowza" Version="1.0.0"/>
     <Compile Include="**\*.apple.cs" />
   </ItemGroup>
+
+  
 
   <!--Additional item groups-->
   <!--
@@ -112,4 +115,6 @@
     <Compile Include="**\*.dotnet.cs" />
   </ItemGroup>
   -->
+
+  <!--<Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />-->
 </Project>

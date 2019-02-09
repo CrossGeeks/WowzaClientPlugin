@@ -7,7 +7,7 @@ namespace Plugin.WowzaClient
     /// </summary>
     public static class CrossWowzaClient
     {
-        static Lazy<IWowzaClient> implementation = new Lazy<IWowzaClient>(() => CreateWowzaClient(), System.Threading.LazyThreadSafetyMode.PublicationOnly);
+        static Lazy<IWowzaClientManager> implementation = new Lazy<IWowzaClientManager>(() => CreateWowzaClient(), System.Threading.LazyThreadSafetyMode.PublicationOnly);
 
         /// <summary>
         /// Gets if the plugin is supported on the current platform.
@@ -17,11 +17,11 @@ namespace Plugin.WowzaClient
         /// <summary>
         /// Current plugin implementation to use
         /// </summary>
-        public static IWowzaClient Current
+        public static IWowzaClientManager Current
         {
             get
             {
-                IWowzaClient ret = implementation.Value;
+                IWowzaClientManager ret = implementation.Value;
                 if (ret == null)
                 {
                     throw NotImplementedInReferenceAssembly();
@@ -30,13 +30,13 @@ namespace Plugin.WowzaClient
             }
         }
 
-        static IWowzaClient CreateWowzaClient()
+        static IWowzaClientManager CreateWowzaClient()
         {
 #if NETSTANDARD1_0 || NETSTANDARD2_0
             return null;
 #else
 #pragma warning disable IDE0022 // Use expression body for methods
-            return new WowzaClientImplementation();
+            return new WowzaClientManager();
 #pragma warning restore IDE0022 // Use expression body for methods
 #endif
         }
