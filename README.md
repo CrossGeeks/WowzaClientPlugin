@@ -7,7 +7,8 @@ Cross platform plugin for handling streaming, broadcasting, and playback with Wo
 [![NuGet Pre Release](https://img.shields.io/nuget/vpre/Plugin.WowzaClient.svg?label=NuGet)](https://www.nuget.org/packages/Plugin.WowzaClient)
 * Install into your PCL project and Client projects.
 * Create your [Wowza Cloud Console](WowzaClient/docs/WowzaCloudConsoleSetup.md) broadcast session.
-* Follow the [Getting Started](WowzaClient/docs/GettingStarted.md) guide
+* Follow the [OBS Streaming Software](WowzaClient/docs/OBSSetup.md) setup guide.
+* Follow the [Getting Started](WowzaClient/docs/GettingStarted.md) guide.
 
 **Platform Support**
 
