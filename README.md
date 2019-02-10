@@ -39,7 +39,7 @@ Here you will find detailed documentation on setting up and using the Wowza Clie
 * [Documentation References](GoogleClient/docs/References.md)
 * Wowza SDK Bindings by [CrossGeeks](https://github.com/CrossGeeks):
 
-    - [Xamarin.Android.LinkedIn](https://www.nuget.org/packages/Xamarin.Android.Wowza/)
+    - [Xamarin.Android.Wowza](https://www.nuget.org/packages/Xamarin.Android.Wowza/)
     
     - [Xamarin.iOS.Wowza](https://www.nuget.org/packages/Xamarin.iOS.Wowza/)
 
