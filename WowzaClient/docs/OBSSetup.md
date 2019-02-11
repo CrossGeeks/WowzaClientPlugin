@@ -17,3 +17,4 @@ Setting up streaming software with Wowza Livestream source connection informatio
 
 ![Live Stream Connection Information 2](https://github.com/CrossGeeks/WowzaClientPlugin/blob/master/WowzaClient/images/SS7.png?raw=true)
 
+<= Back to [Table of Contents](../../README.md)
