@@ -83,7 +83,7 @@ Here is an example on how to play or stop the Wowza Client:
 
 
 ### Exceptions
-Types of exceptions the user can handle from the Google Client plugin.
+Types of exceptions the user can handle from the Wowza Client plugin.
 ```cs
     // Indicates Wowza Client Plugin was not initialized correctly on the platform.
     WowzaClientNotInitializedException	
