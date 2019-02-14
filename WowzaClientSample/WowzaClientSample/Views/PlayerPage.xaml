@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:WowzaClientSample.ViewModels"
+             xmlns:controls="clr-namespace:WowzaClientSample.Controls"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true"
+             x:Class="WowzaClientSample.Views.PlayerPage"
+             Title="Player">
+    <ContentPage.BindingContext>
+        <viewmodels:PlayerPageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <controls:WowzaPlayerView x:Name="player" HorizontalOptions="FillAndExpand"
+                                      VerticalOptions="FillAndExpand"/>
+            <Button Text="Play" Command="{Binding OnPlayButtonCommand}"
+                    VerticalOptions="End"
+                    Margin="32,16"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
