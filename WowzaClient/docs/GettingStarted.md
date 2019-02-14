@@ -33,4 +33,73 @@ Add this permission.
      WowzaClientManager.Initialize("<Wowza GoCoder SDK Key>");
 ```
 
+### Wowza Config
+
+Here is an example on how to create the WowzaConfig class needed for the Plugin Setup method:
+
+```cs
+    public class WowzaCloudConfig : IWowzaConfig
+    {
+        public string HostAddress => "<Host address>";
+
+        public int PortNumber => 1935;
+
+        public string ApplicationName => "<Application Name>";
+
+        public string StreamName => "<Stream Name>";
+
+        public string Username => "<Username>";
+
+        public string Password => "<Password>";
+    }
+```
+
+### Setup
+
+Here is an example on how to setup the Wowza Client:
+
+```cs
+    CrossWowzaClient.Current.Setup(new WowzaCloudConfig());
+```
+
+### Play & Stop
+Here is an example on how to play or stop the Wowza Client:
+```cs
+    if (!CrossWowzaClient.Current.IsPlaying)
+    {
+        CrossWowzaClient.Current.Play();
+    }
+    else
+        CrossWowzaClient.Current.Stop();
+```
+
+### Available Properties
+* **IsPlaying**
+* **Volume**
+
+### Events
+* **OnPlayerStatusChanged**
+* **OnError**
+
+
+### Exceptions
+Types of exceptions the user can handle from the Google Client plugin.
+```cs
+    // Indicates Wowza Client Plugin was not initialized correctly on the platform.
+    WowzaClientNotInitializedException	
+
+    // Indicates Wowza Client Plugin is not setup.
+    WowzaClientNotSetupException
+
+    // Indicates our Wowza Player View is not currently attached.
+    WowzaClientPlayerViewNotAttachedException
+
+    // Indicates a problem with the Wowza Client License Key.
+    WowzaClientLicensingKeyException
+
+    // Indicates the HslURL is Null or Empty
+    WowzaClientHslUrlParameterNullOrEmptyException
+
+```
+
 <= Back to [Table of Contents](../../README.md)
