@@ -34,7 +34,7 @@ Here you will find detailed documentation on setting up and using the Wowza Clie
 * [Getting Started](WowzaClient/docs/GettingStarted.md)
 
 ### Wowza Client Sample Application
-* [Wowza Client Sample App](WowzaClient/WowzaClientSample)
+* [Wowza Client Sample App](WowzaClientSample)
 
 ### References
 * [Documentation References](GoogleClient/docs/References.md)
